@@ -19,3 +19,11 @@ class Image(VoteModel,models.Model):
     def delete_image(self):
         self.delete()
         
+    @classmethod    
+    def update_caption(cls,id,new_caption):
+        cls.objects.filter(pk = id ).update(image_caption = new_caption)
+        new_caption_object = cls.objects.get(image_caption=new_caption)
+        new_caption = new_caption_object.image_caption
+        return new_caption
+    
+ 
