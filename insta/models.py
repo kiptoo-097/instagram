@@ -13,4 +13,6 @@ class Image(VoteModel,models.Model):
     likes = models.PositiveIntegerField(default=0)
     user = models.ForeignKey(User,on_delete=models.CASCADE)
     
-
+    def save_image(self):
+        self.save()
+        
