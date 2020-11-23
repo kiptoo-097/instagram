@@ -144,3 +144,8 @@ STATIC_ROOT = os.path.join(VENV_PATH, 'static_root')
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
 
+cloudinary.config( 
+  cloud_name = "duwrz9hlg", 
+  api_key = "363478488465547", 
+  api_secret = "ACxZTeRAlduRQ3GVl7vggt0jX2k" 
+)
