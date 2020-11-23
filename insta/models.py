@@ -70,5 +70,11 @@ class Profile(models.Model):
     def delete_profile(self):
         self.delete()
     
+    @classmethod   
+    def update_bio(cls,id,new_bio):
+        cls.objects.filter(pk = id).update(bio=new_bio)
+        new_bio_object = cls.objects.get(bio = new_bio)
+        new_bio = new_bio_object.bio
+        return new_bio
 
 
