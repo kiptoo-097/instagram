@@ -46,4 +46,29 @@ class Comments(models.Model):
         comments = cls.objects.filter(image__id=id)
         return comments
     
- 
+    def save_comment(self):
+        self.save()
+    
+    def __str__(self):
+        
+        return self.comment
+class Profile(models.Model):
+    profile_photo = models.ImageField(upload_to='images')
+    bio = models.TextField(max_length=100)
+    user = models.OneToOneField(User,on_delete=models.CASCADE,primary_key=True)
+    
+
+    
+    
+    def __str__(self):
+        
+        return self.profile_photo.url
+    
+    def save_profile(self):
+        self.save()
+        
+    def delete_profile(self):
+        self.delete()
+    
+
+
