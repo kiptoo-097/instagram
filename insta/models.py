@@ -1,21 +1,16 @@
-from django.db import models
+from django.db import models 
+from django.contrib.auth.models import User
 from tinymce.models import HTMLField
+from vote.models import VoteModel
+from cloudinary.models import CloudinaryField
 
 
 
-class Picture(models.Model):
-    image = models.ImageField(upload_to='images/')
-    picture_name = models.CharField(max_length=50)
-    picture_caption = models.CharField(max_length=50)
+class Image(VoteModel,models.Model):
+    image = CloudinaryField('image')
+    image_name = models.CharField(max_length=50)
+    image_caption = models.CharField(max_length=50)
     likes = models.PositiveIntegerField(default=0)
+    user = models.ForeignKey(User,on_delete=models.CASCADE)
     
-    
-    def save_picture(self):
-        self.save()
-        
-    def delete_picture(self):
-        self.delete()
-        
-    def __str__(self):
-        
-        return self.picture_name
+
