@@ -1,0 +1,31 @@
+{% load bootstrap4 %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>New photo</title>
+
+    {% block styles %}
+    {% bootstrap_css %}
+    <link rel="stylesheet" href="{% static 'css/news.css'%}">
+    {% endblock %}
+</head>
+
+<body>
+    <div class="container">
+    <form action="{% url 'edit' %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {% bootstrap_form form%}
+        <input type="submit" class="btn btn-primary btn-md" value="Post">
+    </form>
+
+    {% block scripts %}
+    
+    {% bootstrap_javascript %}
+    {% endblock %}
+    </div>
+</body>
