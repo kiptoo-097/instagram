@@ -21,6 +21,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include('insta.urls')),
     path('about/',include('insta.urls')),
-    
+    path('accounts/', include('registration.backends.simple.urls')),
     
 ]
