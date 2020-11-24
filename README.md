@@ -16,7 +16,7 @@ Users can sign up, login, view and post photos, search and follow other users.
 * Follow other users and see their pictures on my timeline.  
   
 ## deployed link
-- 
+- https://kiptooinsta.herokuapp.com/
 
   
 ### Setup and Installation  
@@ -66,7 +66,8 @@ Open the application on your browser `127.0.0.1:8000`.
   
 * [Python3.8](https://www.python.org/)  
 * [Django 3.1.28](https://docs.djangoproject.com/en/1.11/)  
-* [Heroku](https://heroku.com)  
+* [Heroku](https://heroku.com) 
+* [Figma] (https://www.figma.com/file/BT6mj74MMXSCNp7BCGzEwf/Untitled?node-id=0%3A1) 
 * [Git]()
   
   
